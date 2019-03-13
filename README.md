@@ -1,7 +1,8 @@
 # Number Convert
 
-Python script that checks a password against the Have I Been Pwned database, and
-reports back on whether or not it has been listed.
+Python script that checks a password against the
+[Have I Been Pwned](https://haveibeenpwned.com/) database, and reports back on
+whether or not it has been listed.
 
 For more info on the API docs, see <https://haveibeenpwned.com/API/v2>
 
