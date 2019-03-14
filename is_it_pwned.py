@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #######################
 # File: is_it_pwned.py
 # Description: Checks a password against the Have I Been Pwned database, and
@@ -6,7 +6,7 @@
 #   API docs, see https://haveibeenpwned.com/API/v2
 #
 # Author: E. Chris Pedro
-# Version: 2019-03-12
+# Version: 2019-03-14
 #######################
 #
 # This is free and unencumbered software released into the public domain.
@@ -35,16 +35,17 @@
 # For more information, please refer to <http://unlicense.org>
 #######################
 
+import sys
+import getpass
 import hashlib
 import requests
-import sys
 
 # Change if API endpoint changes.
 api_url = 'https://api.pwnedpasswords.com/range/'
 
 def hash_password(passwd):
     sha1 = hashlib.sha1()
-    sha1.update(passwd)
+    sha1.update(passwd.encode('utf-8'))
     return sha1.hexdigest().upper()
 
 def lookup_passwd(passwd):
@@ -65,13 +66,12 @@ if __name__ == '__main__':
     try:
         passwd = sys.argv[1]
     except IndexError:
-        print("usage: " + sys.argv[0] + " <passwd>")
-        exit(1)
+        passwd = getpass.getpass("Password to check: ")
     
     count = lookup_passwd(passwd)
     if (count):
-        print (passwd + " has been pwned " + count + " times.")
+        print ("That password has been pwned " + count + " times.")
     else:
-        print (passwd + " has not been pwned.")
+        print ("That password has not been pwned.")
 
 exit()
