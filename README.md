@@ -8,7 +8,8 @@ This method may be preferable to putting your password directly into the site
 because this script only sends the first 5 characters of the SHA1 hash of your
 password over the internet instead of your whole password or hash.
 
-For more info on the API docs, see <https://haveibeenpwned.com/API/v2>
+For more info see the
+[API docs](https://haveibeenpwned.com/API/v2#SearchingPwnedPasswordsByRange)
 
 This script was inspired by Computerphile's 
 [YouTube video](https://youtu.be/hhUb5iknVJs) featuring 
