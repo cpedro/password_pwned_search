@@ -4,7 +4,7 @@ Python script that checks a password against the
 [Have I Been Pwned](https://haveibeenpwned.com/) database, and reports back on
 whether or not it has been listed.
 
-You may need to install the `requests` module first before running.
+You may need to install the `requests` package first before running.
 ```
 $ pip install requests
 ```
