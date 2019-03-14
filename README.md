@@ -1,4 +1,4 @@
-# Number Convert
+# Is my password pwned?
 
 Python script that checks a password against the
 [Have I Been Pwned](https://haveibeenpwned.com/) database, and reports back on
