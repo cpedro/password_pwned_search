@@ -45,4 +45,3 @@ the same thing.
   ```
   $ python is_it_pwned.py <password1> [<password2> ...]
   ```
-  * 
