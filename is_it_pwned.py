@@ -40,7 +40,12 @@ For more information, please refer to <http://unlicense.org>
 import sys
 import getpass
 import hashlib
-import requests
+
+try:
+    import requests
+except ModuleNotFoundError:
+    print('run: "pip3 install requests"')
+    raise
 
 
 def pwned_api_lookup(passwd):
@@ -52,9 +57,9 @@ def pwned_api_lookup(passwd):
     
     url = api_url + format(head)
     req = requests.get(url)
-    if req.status_code != 200:
-        raise RuntimeError('Error fetching "{}": {}'.format(
-            url, req.status_code))
+    status_code = req.status_code
+    if status_code != 200:
+        raise RuntimeError('Error fetching "{}": {}'.format(url, status_code))
 
     hashes = (line.split(':') for line in req.text.splitlines())
     count = next((int(count) for val, count in hashes if val == tail), 0)
@@ -67,14 +72,14 @@ def lookup_password(passwd):
     try:
         sha1, count = pwned_api_lookup(passwd)
         if (count):
-            msg = "{0} has been pwned {1} times (hash: {2})"
+            msg = '{0} has been pwned {1} times (hash: {2})'
             print(msg.format(passwd, count, sha1))
             status = 1
         else:
-            print("That password has not been pwned.")
+            print('That password has not been pwned.')
     except UnicodeError:
         errormsg = sys.exc_info()[1]
-        print("Password could not be checked: {0}".format(errormsg))
+        print('Password could not be checked: {0}'.format(errormsg))
         status = 1
     
     return status
@@ -83,7 +88,7 @@ def main(args):
     status = 0
     
     if sys.stdin.isatty() and len(args) == 0:
-        status = lookup_password(getpass.getpass("Password to check: "))
+        status = lookup_password(getpass.getpass('Password to check: '))
     else:
         for passwd in args or sys.stdin:
             status = lookup_password(passwd)
