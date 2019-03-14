@@ -39,9 +39,9 @@ the same thing.
   ```
   $ cmd | is_it_pwned pwned.py
   ```
-* Checks passwords given command line arguments: (**Beware** the password may be
-  saved in shell history and that other users on the system may be able to observe
-  the command line.)
+* Checks passwords given command line arguments: (**Beware** the password may
+  be saved in shell history and that other users on the system may be able to
+  observe the command line.)
   ```
   $ python is_it_pwned.py <password1> [<password2> ...]
   ```
