@@ -37,7 +37,7 @@ the same thing.
   ```
 * Reads passwords written to standard output by another command:
   ```
-  $ cmd | is_it_pwned pwned.py
+  $ cmd | python is_it_pwned.py
   ```
 * Checks passwords given command line arguments: (**Beware** the password may
   be saved in shell history and that other users on the system may be able to
