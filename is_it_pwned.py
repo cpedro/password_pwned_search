@@ -68,10 +68,10 @@ def lookup_password(passwd):
         sha1, count = pwned_api_lookup(passwd)
         if (count):
             msg = "{0} has been pwned {1} times (hash: {2})"
-            print (msg.format(passwd, count, sha1))
+            print(msg.format(passwd, count, sha1))
             status = 1
         else:
-            print ("That password has not been pwned.")
+            print("That password has not been pwned.")
     except UnicodeError:
         errormsg = sys.exc_info()[1]
         print("Password could not be checked: {0}".format(errormsg))
