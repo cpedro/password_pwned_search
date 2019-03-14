@@ -28,12 +28,21 @@ the same thing.
 
 ## Running:
 * Prompts you for a single password (echo off):
-  * `$ python is_it_pwned.py`
+  ```
+  $ python is_it_pwned.py
+  ```
 * Reads passwords from a file:
-  * `$ python is_it_pwned.py < file`
+  ```
+  $ python is_it_pwned.py < file
+  ```
 * Reads passwords written to standard output by another command:
-  * `$ cmd | is_it_pwned pwned.py`
-* Checks passwords given command line arguments:
-  * `$ python is_it_pwned.py <password1> [<password2> ...]`
-  * **Beware** the password may be saved in shell history and that other users
-    on the system may be able to observe the command line.
+  ```
+  $ cmd | is_it_pwned pwned.py
+  ```
+* Checks passwords given command line arguments: (**Beware** the password may be
+  saved in shell history and that other users on the system may be able to observe
+  the command line.)
+  ```
+  $ python is_it_pwned.py <password1> [<password2> ...]
+  ```
+  * 
