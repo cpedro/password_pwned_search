@@ -12,18 +12,18 @@ For more info on the API docs, see <https://haveibeenpwned.com/API/v2>
 
 This script was inspired by Computerphile's 
 [YouTube video](https://youtu.be/hhUb5iknVJs) featuring 
-[Mike Pound](https://github.com/mikepound), and later I
-took some code from the Python script 
-[he wrote](https://github.com/mikepound/pwned-search) that does the same thing.
+[Mike Pound](https://github.com/mikepound), and later I took some code from the 
+Python script [he wrote](https://github.com/mikepound/pwned-search) that does 
+the same thing.
 
 ## Running:
 * Prompts you for a single password (echo off):
-  `python is_it_pwned.py`
+  `$ python is_it_pwned.py`
 * Reads passwords from a file:
-  `python is_it_pwned.py < file`
+  `$ python is_it_pwned.py < file`
 * Reads passwords written to standard output by another command:
-  `cmd | is_it_pwned pwned.py`
+  `$ cmd | is_it_pwned pwned.py`
 * Checks passwords given command line arguments:
-  `python is_it_pwned.py <password1> [<password2> ...]`
+  `$ python is_it_pwned.py <password1> [<password2> ...]`
   * **Beware** the password may be saved in shell history and that other users
     on the system ma be able to observe the command line.
