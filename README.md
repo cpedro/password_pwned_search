@@ -5,9 +5,13 @@ Python script that checks a password against the
 whether or not it has been listed.
 
 You may need to install the `requests` module first before running.
-`$ pip install requests`
+```
+$ pip install requests
+```
 **OR**
-`$ pip3 install requests`
+```
+$ pip3 install requests
+```
 
 This method may be preferable to putting your password directly into the site
 because this script only sends the first 5 characters of the SHA1 hash of your
