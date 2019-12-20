@@ -71,7 +71,7 @@ def lookup_password(passwd):
     
     try:
         sha1, count = pwned_api_lookup(passwd)
-        if (count):
+        if count:
             msg = '{0} has been pwned {1} times (hash: {2})'
             print(msg.format(passwd, count, sha1))
             status = 1
